@@ -27,7 +27,7 @@ public class Number : MonoBehaviour
             timeNow = DateTime.Now;
             timeDelta = timeNow - timeStart;
             positionX = 50.0f + ((float)timeDelta.TotalSeconds * 1080.0f / 3.500f);
-            number.transform.position = new Vector2(positionX, 0.0f);
+            number.transform.position = new Vector2(positionX, 360.0f);
             if (Input.GetMouseButtonUp(0) == true)
             {
                 numberStarFXGenerator1.GetComponent<NumberStarFXGenerator1>().isNumberStarFX = true;
