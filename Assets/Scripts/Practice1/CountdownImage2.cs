@@ -19,7 +19,7 @@ public class CountdownImage2 : MonoBehaviour
     void Start()
     {
         timeStart = DateTime.MinValue;
-        timeNow = DateTime.MinValue;
+        timeNow = DateTime.MaxValue;
         timeDelta = TimeSpan.FromSeconds(0.000);
         isCountdown = false;
         spriteRenderer = gameObject.GetComponent<Image>();
@@ -58,5 +58,15 @@ public class CountdownImage2 : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ResetSetting()
+    {
+        timeStart = DateTime.MinValue;
+        timeNow = DateTime.MaxValue;
+        timeDelta = TimeSpan.FromSeconds(0.000);
+        isCountdown = false;
+        countdownNumber = 0;
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(350.0f, 350.0f);
     }
 }

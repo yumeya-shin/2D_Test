@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: -4365604717599152651
     second: button_practice_2
+  - first:
+      213: -777855890070081280
+    second: button_practice_3
+  - first:
+      213: 3248837020720556924
+    second: button_practice_4
+  - first:
+      213: 1548846732200473631
+    second: button_practice_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -222,7 +231,7 @@ TextureImporter:
         width: 200
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,6 +239,69 @@ TextureImporter:
       bones: []
       spriteID: 5f5abb9a3a14a63c0800000000000000
       internalID: -4365604717599152651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_practice_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 400
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0017de170308435f0800000000000000
+      internalID: -777855890070081280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_practice_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 400
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7bef29ae00361d20800000000000000
+      internalID: 3248837020720556924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_practice_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 400
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14755495eb9e7510800000000000000
+      internalID: 1548846732200473631
       vertices: []
       indices: 
       edges: []

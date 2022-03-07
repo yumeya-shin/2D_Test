@@ -32,19 +32,31 @@ public class PracticeStartButton1 : MonoBehaviour
 
     void OnMouseEnter()
     {
-        mainSpriteRenderer.sprite = startButton[1];
-        AudioSource.PlayClipAtPoint(onButton, new Vector3(0, 0, -10));
-        //Debug.Log($"mainSpriteRenderer.sprite = {mainSpriteRenderer.sprite}");
+        if (bgmChange == true)
+        {
+            mainSpriteRenderer.sprite = startButton[2];
+        }
+        else
+        {
+            mainSpriteRenderer.sprite = startButton[1];
+            AudioSource.PlayClipAtPoint(onButton, new Vector3(0, 0, -10));
+            //Debug.Log($"mainSpriteRenderer.sprite = {mainSpriteRenderer.sprite}");
+        }
     }
 
     void OnMouseOver()
     {
-        if ((Input.GetMouseButtonDown(0) == true) || (Input.GetMouseButton(0) == true) || (Input.GetMouseButtonUp(0) == true))
+        if(bgmChange == true)
+        {
+            mainSpriteRenderer.sprite = startButton[2];
+        }
+        else if ((Input.GetMouseButtonDown(0) == true) || (Input.GetMouseButton(0) == true) || (Input.GetMouseButtonUp(0) == true))
         {
             mainSpriteRenderer.sprite = startButton[2];
             //Debug.Log($"mainSpriteRenderer.sprite = {mainSpriteRenderer.sprite}");
             if (Input.GetMouseButtonUp(0) == true)
             {
+                AudioSource.PlayClipAtPoint(releaseButton, new Vector3(0, 0, -10));
                 explanationTextTMP.SetActive(false);
                 waitCountdownTextTMP.SetActive(true);
                 bgmChange = true;
@@ -61,12 +73,17 @@ public class PracticeStartButton1 : MonoBehaviour
     {
         if(bgmChange == true)
         {
-            mainSpriteRenderer.sprite = startButton[1];
+            mainSpriteRenderer.sprite = startButton[2];
         }
         else if(bgmChange == false)
         {
             mainSpriteRenderer.sprite = startButton[0];
         }
         //Debug.Log($"mainSpriteRenderer.sprite = {mainSpriteRenderer.sprite}");
+    }
+
+    public void ResetSetting()
+    {
+        mainSpriteRenderer.sprite = startButton[0];
     }
 }

@@ -7,11 +7,13 @@ public class NumberStarFXGenerator1 : MonoBehaviour
     public int i;
     public bool isNumberStarFX;
     //public GameObject[] numberStarFX = new GameObject[5];
-    public GameObject numberStarFXPre;
+    [SerializeField] GameObject numberStarFXPre;
+
     public GameObject numberCircleFX;
     public GameObject targetObject;
     public Vector3 numberStarFXPosition;
-    readonly Vector2[] numberStarFXVector = new Vector2[5]
+    
+    [SerializeField] readonly Vector2[] numberStarFXVector = new Vector2[5]
     {
         new Vector2(0.0f, 100.0f),
         new Vector2(95.1056516295153f, 30.9016994374947f),
@@ -36,10 +38,10 @@ public class NumberStarFXGenerator1 : MonoBehaviour
             //Vector3 numberStarFXPosition = new Vector3(targetObject.transform.position.x, targetObject.transform.position.y, targetObject.transform.position.z);
             for(i = 1; i <= 5; i++)
             {
-                GameObject objectPre = Instantiate(numberStarFXPre, Camera.main.ScreenToWorldPoint(numberStarFXPosition), Quaternion.identity);
+                GameObject objectPre = Instantiate(numberStarFXPre, /*Camera.main.ScreenToWorldPoint*/(numberStarFXPosition), Quaternion.identity);
                 objectPre.GetComponent<NumberStar>().SetMoveVector(numberStarFXVector[i - 1]);
             }
-            Instantiate(numberCircleFX, Camera.main.ScreenToWorldPoint(numberStarFXPosition), Quaternion.identity);
+            Instantiate(numberCircleFX, /*Camera.main.ScreenToWorldPoint*/(numberStarFXPosition), Quaternion.identity);
             isNumberStarFX = false;
         }
     }

@@ -19,7 +19,7 @@ public class CountdownImage1 : MonoBehaviour
     void Start()
     {
         timeStart = DateTime.MinValue;
-        timeNow = DateTime.MinValue;
+        timeNow = DateTime.MaxValue;
         timeDelta = TimeSpan.FromSeconds(0.000);
         isCountdown = false;
         spriteRenderer = gameObject.GetComponent<Image>();
@@ -53,5 +53,14 @@ public class CountdownImage1 : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ResetSetting()
+    {
+        timeStart = DateTime.MinValue;
+        timeNow = DateTime.MaxValue;
+        timeDelta = TimeSpan.FromSeconds(0.000);
+        isCountdown = false;
+        countdownSprite = 0; countdownNumber = 3;
     }
 }

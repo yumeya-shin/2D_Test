@@ -12,7 +12,7 @@ public class BGMTimeManager : MonoBehaviour
     public DateTime timeStart, timeNow;
     public TimeSpan timeDelta;
     [SerializeField] static TimeSpan timeSum = TimeSpan.FromSeconds(2.000);
-    public GameObject practiceStartButton1, canvas1, canvas2, canvas3, canvas2CountdownImage1, canvas2CountdownImage2, number;
+    public GameObject practiceStartButton1, canvas1, canvas2, canvas3, canvas2CountdownImage1, canvas2CountdownImage2, number, numberStar, result, retryButton1;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,9 @@ public class BGMTimeManager : MonoBehaviour
         canvas2CountdownImage2 = GameObject.Find("Explanation1/Canvas2/CountdownImage2");
         canvas3 = GameObject.Find("Explanation1/Canvas3");
         number = GameObject.Find("Explanation1/Canvas3/Number");
+        numberStar = GameObject.Find("Explanation1/Canvas3/NumberStar");
+        result = GameObject.Find("Explanation1/Canvas3/Result");
+        retryButton1 = GameObject.Find("Explanation1/Canvas3/RetryButton1");
         canvas2.SetActive(false);
         canvas2CountdownImage2.SetActive(false);
         canvas3.SetActive(false);
@@ -50,6 +53,7 @@ public class BGMTimeManager : MonoBehaviour
             {
                 timeStart = timeNow;
                 timeDelta -= timeSum;
+
                 switch (switchBGM)
                 {
                     case 0:
@@ -67,6 +71,7 @@ public class BGMTimeManager : MonoBehaviour
                             practiceStartButton1.GetComponent<PracticeStartButton1>().bgmChange = false;
                             canvas1.SetActive(false);
                             canvas2.SetActive(true);
+                            canvas2CountdownImage1.SetActive(true);
                             canvas2CountdownImage2.SetActive(true);
                             switchBGM = 5;
                         }
@@ -113,6 +118,7 @@ public class BGMTimeManager : MonoBehaviour
                             practiceStartButton1.GetComponent<PracticeStartButton1>().bgmChange = false;
                             canvas1.SetActive(false);
                             canvas2.SetActive(true);
+                            canvas2CountdownImage1.SetActive(true);
                             canvas2CountdownImage2.SetActive(true);
                             switchBGM = 5;
                         }
@@ -156,6 +162,7 @@ public class BGMTimeManager : MonoBehaviour
                         canvas2CountdownImage2.GetComponent<CountdownImage2>().isCountdown = true;
                         canvas1.SetActive(false);
                         canvas2.SetActive(true);
+                        canvas2CountdownImage1.SetActive(true);
                         canvas2CountdownImage2.SetActive(true);
                         practiceStartButton1.GetComponent<PracticeStartButton1>().bgmChange = false;
                         switchBGM = 5;
@@ -167,7 +174,13 @@ public class BGMTimeManager : MonoBehaviour
                         canvas2.SetActive(false);
                         number.GetComponent<Number>().timeStart = timeStart;
                         number.GetComponent<Number>().timeDelta = timeDelta;
+                        number.GetComponent<Number>().isDeltaPassed = true;
                         canvas3.SetActive(true);
+                        number.SetActive(true);
+                        result.SetActive(false);
+                        retryButton1.SetActive(false);
+                        //numberStar.GetComponent<NumberStar>().isNumberStar = true;
+                        //numberStar.GetComponent<NumberStar>().SetMoveVector(new Vector2(0.0f, 100.0f));
                         switchBGM = 10;
                         break;
                     case 10:
