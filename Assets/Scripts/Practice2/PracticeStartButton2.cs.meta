@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 65da0e1ae53c56e4c8d72dc0e06050ec
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - image: {instanceID: 0}
+  - onButton: {fileID: 8300000, guid: 23d0e1e3abc400648b914829e6ba1d0f, type: 3}
+  - releaseButton: {fileID: 8300000, guid: 6887006fb3494484da7559da5b2fcb78, type: 3}
+  - explanationTextTMP2: {instanceID: 0}
+  - waitCountdownTextTMP2: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

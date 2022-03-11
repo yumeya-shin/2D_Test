@@ -11,7 +11,7 @@ public class BGMTimeManager : MonoBehaviour
     public int switchBGM;
     public DateTime timeStart, timeNow;
     public TimeSpan timeDelta;
-    [SerializeField] static TimeSpan timeSum = TimeSpan.FromSeconds(2.000);
+    [SerializeField] public TimeSpan timeSum = TimeSpan.FromSeconds(2.000);
     public GameObject practiceStartButton1, canvas1, canvas2, canvas3, canvas2CountdownImage1, canvas2CountdownImage2, number, numberStar, result, retryButton1, nextButton1;
 
     // Start is called before the first frame update
