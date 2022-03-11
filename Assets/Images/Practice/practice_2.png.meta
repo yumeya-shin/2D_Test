@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 860b7f8011119694280dadb3648cbc5b
+guid: 2e8d3da6d3421e5449997284cf311914
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 824618951729262628
-    second: countdown_number_0
-  - first:
-      213: -6146148276546079409
-    second: countdown_number_1
-  - first:
-      213: 1869433550612941626
-    second: countdown_number_2
-  - first:
-      213: -616555743240368426
-    second: countdown_number_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -173,91 +161,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: countdown_number_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 350
-        height: 350
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 420b0ec4192a17b00800000000000000
-      internalID: 824618951729262628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: countdown_number_1
-      rect:
-        serializedVersion: 2
-        x: 350
-        y: 0
-        width: 350
-        height: 350
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f457797c4be74baa0800000000000000
-      internalID: -6146148276546079409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: countdown_number_2
-      rect:
-        serializedVersion: 2
-        x: 700
-        y: 0
-        width: 350
-        height: 350
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3b4b7bd8ef81f910800000000000000
-      internalID: 1869433550612941626
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: countdown_number_3
-      rect:
-        serializedVersion: 2
-        x: 1050
-        y: 0
-        width: 798
-        height: 350
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6de4ee371dd8177f0800000000000000
-      internalID: -616555743240368426
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

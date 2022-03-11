@@ -12,7 +12,7 @@ public class BGMTimeManager : MonoBehaviour
     public DateTime timeStart, timeNow;
     public TimeSpan timeDelta;
     [SerializeField] static TimeSpan timeSum = TimeSpan.FromSeconds(2.000);
-    public GameObject practiceStartButton1, canvas1, canvas2, canvas3, canvas2CountdownImage1, canvas2CountdownImage2, number, numberStar, result, retryButton1;
+    public GameObject practiceStartButton1, canvas1, canvas2, canvas3, canvas2CountdownImage1, canvas2CountdownImage2, number, numberStar, result, retryButton1, nextButton1;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,7 @@ public class BGMTimeManager : MonoBehaviour
         numberStar = GameObject.Find("Explanation1/Canvas3/NumberStar");
         result = GameObject.Find("Explanation1/Canvas3/Result");
         retryButton1 = GameObject.Find("Explanation1/Canvas3/RetryButton1");
+        nextButton1 = GameObject.Find("Explanation1/Canvas3/NextButton1");
         canvas2.SetActive(false);
         canvas2CountdownImage2.SetActive(false);
         canvas3.SetActive(false);
@@ -179,6 +180,7 @@ public class BGMTimeManager : MonoBehaviour
                         number.SetActive(true);
                         result.SetActive(false);
                         retryButton1.SetActive(false);
+                        nextButton1.SetActive(false);
                         //numberStar.GetComponent<NumberStar>().isNumberStar = true;
                         //numberStar.GetComponent<NumberStar>().SetMoveVector(new Vector2(0.0f, 100.0f));
                         switchBGM = 10;

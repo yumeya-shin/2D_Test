@@ -31,9 +31,9 @@ public class Number : MonoBehaviour
         //}
         if(isDeltaPassed == true)
         {
-            Debug.Log(rectTransform.localPosition.x);
-            //rectTransform.localPosition = new Vector3(50.0f + (float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 0.0f, 0.0f);
-            Debug.Log(rectTransform.localPosition.x);
+            Debug.Log(rectTransform.anchoredPosition.x);
+            rectTransform.anchoredPosition = new Vector2(50.0f + (float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 360.0f);
+            Debug.Log(rectTransform.anchoredPosition.x);
             Debug.Log(timeDelta.TotalSeconds);
             isDeltaPassed = false;
         }
@@ -51,9 +51,9 @@ public class Number : MonoBehaviour
         {
             if (isDeltaPassed == true)
             {
-                Debug.Log(rectTransform.localPosition.x);
-                rectTransform.localPosition = new Vector3(50.0f + (float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 0.0f, 0.0f);
-                Debug.Log(rectTransform.localPosition.x);
+                Debug.Log(rectTransform.anchoredPosition.x);
+                rectTransform.anchoredPosition = new Vector2(50.0f + (float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 360.0f);
+                Debug.Log(rectTransform.anchoredPosition.x);
                 Debug.Log(timeDelta.TotalSeconds);
                 isDeltaPassed = false;
             }
@@ -61,54 +61,54 @@ public class Number : MonoBehaviour
             timeDelta = timeNow - timeStart;
             timeStart = timeNow;
             //positionX = -590.0f + ((float)timeDelta.TotalSeconds * 1080.0f / 3.500f);
-            rectTransform.localPosition += new Vector3((float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 0.0f, 0.0f);
+            rectTransform.anchoredPosition += new Vector2((float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 0.0f);
             if (Input.GetMouseButtonUp(0) == true)
             {
                 numberStarFXGenerator1.GetComponent<NumberStarFXGenerator1>().isNumberStarFX = true;
                 numberStarFXGenerator1.GetComponent<NumberStarFXGenerator1>().numberStarFXPosition = GetComponent<RectTransform>().localPosition;
-                if ((rectTransform.localPosition.x >= 453.0f) && (rectTransform.localPosition.x < 527.0f))
+                if ((rectTransform.anchoredPosition.x >= 1093.0f) && (rectTransform.anchoredPosition.x < 1167.0f))
                 {
                     result.gameObject.GetComponent<Result>().result = 0;
                     result.gameObject.SetActive(true);
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().result = 6;
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().isResultStarFX = true;
                 }
-                else if ((rectTransform.localPosition.x >= 425.0f) && (rectTransform.localPosition.x < 555.0f))
+                else if ((rectTransform.anchoredPosition.x >= 1065.0f) && (rectTransform.anchoredPosition.x < 1195.0f))
                 {
                     result.gameObject.GetComponent<Result>().result = 1;
                     result.gameObject.SetActive(true);
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().result = 5;
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().isResultStarFX = true;
                 }
-                else if ((rectTransform.localPosition.x >= 398.0f) && (rectTransform.localPosition.x < 582.0f))
+                else if ((rectTransform.anchoredPosition.x >= 1038.0f) && (rectTransform.anchoredPosition.x < 1222.0f))
                 {
                     result.gameObject.GetComponent<Result>().result = 2;
                     result.gameObject.SetActive(true);
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().result = 4;
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().isResultStarFX = true;
                 }
-                else if ((rectTransform.localPosition.x >= 365.0f) && (rectTransform.localPosition.x < 615.0f))
+                else if ((rectTransform.anchoredPosition.x >= 1005.0f) && (rectTransform.anchoredPosition.x < 1255.0f))
                 {
                     result.gameObject.GetComponent<Result>().result = 3;
                     result.gameObject.SetActive(true);
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().result = 3;
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().isResultStarFX = true;
                 }
-                else if ((rectTransform.localPosition.x >= 340.0f) && (rectTransform.localPosition.x < 640.0f))
+                else if ((rectTransform.anchoredPosition.x >= 980.0f) && (rectTransform.anchoredPosition.x < 1280.0f))
                 {
                     result.gameObject.GetComponent<Result>().result = 4;
                     result.gameObject.SetActive(true);
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().result = 2;
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().isResultStarFX = true;
                 }
-                else if ((rectTransform.localPosition.x >= 315.0f) && (rectTransform.localPosition.x < 665.0f))
+                else if ((rectTransform.anchoredPosition.x >= 955.0f) && (rectTransform.anchoredPosition.x < 1305.0f))
                 {
                     result.gameObject.GetComponent<Result>().result = 5;
                     result.gameObject.SetActive(true);
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().result = 1;
                     resultStarFXGenerator1.GetComponent<ResultStarFXGenerator1>().isResultStarFX = true;
                 }
-                else if((rectTransform.localPosition.x >= 290.0f) && (rectTransform.localPosition.x < 690.0f))
+                else if((rectTransform.anchoredPosition.x >= 930.0f) && (rectTransform.anchoredPosition.x < 1330.0f))
                 {
                     result.gameObject.GetComponent<Result>().result = 6;
                     result.gameObject.SetActive(true);
@@ -123,7 +123,7 @@ public class Number : MonoBehaviour
                 //Destroy(gameObject);
                 gameObject.SetActive(false);
             }
-            if (rectTransform.localPosition.x >= 1330)
+            if (rectTransform.anchoredPosition.x >= 1330)
             {
                 result.gameObject.GetComponent<Result>().result = 7;
                 result.gameObject.SetActive(true);

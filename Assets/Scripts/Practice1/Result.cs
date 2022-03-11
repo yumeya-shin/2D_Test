@@ -12,7 +12,7 @@ public class Result : MonoBehaviour
     public DateTime timeStart, timeNow;
     public TimeSpan timeSum;
     const double timeWait = 1.000;
-    public Transform retryButton1;
+    public Transform retryButton1, nextButton1;
     public GameObject canvas3;
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class Result : MonoBehaviour
         timeStart = DateTime.Now;
         canvas3 = GameObject.Find("Canvas3");
         retryButton1 = canvas3.transform.Find("RetryButton1");
+        nextButton1 = canvas3.transform.Find("NextButton1");
     }
 
     // Update is called once per frame
@@ -45,6 +46,7 @@ public class Result : MonoBehaviour
             if(timeSum.TotalSeconds >= timeWait)
             {
                 retryButton1.gameObject.SetActive(true);
+                nextButton1.gameObject.SetActive(true);
             }
         }
     }
