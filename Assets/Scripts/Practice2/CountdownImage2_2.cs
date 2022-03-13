@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class CountdownImage2_1 : MonoBehaviour
+public class CountdownImage2_2 : MonoBehaviour
 {
     public Image image;
-    [SerializeField] public Sprite[] countdownSprite = new Sprite[25];
-    public int countdownSpriteNumber, countdownNumber;
+    [SerializeField] public Sprite[] numberSprite = new Sprite[4];
+    public int countdownNumber;
     public GameObject BGMTimeManager2;
     public DateTime timeStart, timeNow;
     public TimeSpan timeDelta, timeSum;
@@ -17,19 +17,17 @@ public class CountdownImage2_1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        image = GetComponent<Image>();
-        countdownSpriteNumber = 0; countdownNumber = 3;
+        image = gameObject.GetComponent<Image>();
+        countdownNumber = 0;
         BGMTimeManager2 = GameObject.Find("BGMTimeManager2");
-        timeStart = DateTime.MinValue;
-        timeNow = DateTime.MaxValue;
-        timeDelta = TimeSpan.FromSeconds(0.000);
-        timeSum = TimeSpan.FromSeconds(60.0 / BGMTimeManager2.GetComponent<BGMTimeManager2>().gameBGMBPM);
-        if(isCountdown == true)
+        timeStart = DateTime.MinValue; timeNow = DateTime.MaxValue;
+        timeDelta = TimeSpan.FromSeconds(0.000); timeSum = TimeSpan.FromSeconds(60.0 / BGMTimeManager2.GetComponent<BGMTimeManager2>().gameBGMBPM);
+        if (isCountdown == true)
         {
             timeStart = BGMTimeManager2.GetComponent<BGMTimeManager2>().timeStart;
             timeDelta = BGMTimeManager2.GetComponent<BGMTimeManager2>().timeDelta;
             isCountdown = false;
-        } 
+        }
     }
 
     // Update is called once per frame
@@ -45,27 +43,27 @@ public class CountdownImage2_1 : MonoBehaviour
         {
             timeNow = DateTime.Now;
             timeDelta = timeNow - timeStart;
-            //Debug.Log($"timeStart = {timeStart}");
             if (timeDelta > TimeSpan.FromSeconds(0.000))
             {
                 if (timeDelta < timeSum)
                 {
-                    countdownSpriteNumber = (int)(timeDelta.TotalSeconds * 50 * BGMTimeManager2.GetComponent<BGMTimeManager2>().gameBGMBPM / 120);
-                    image.sprite = countdownSprite[countdownSpriteNumber];
+                    image.sprite = numberSprite[countdownNumber];
                 }
                 else if (timeDelta >= timeSum)
                 {
                     timeStart = timeNow;
                     timeDelta -= timeSum;
-                    countdownNumber--;
-                    if (countdownNumber == 0)
+                    countdownNumber++;
+                    if (countdownNumber == 3)
                     {
-                        //isCountdown = false;
+                        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(798.0f, 350.0f);
+                    }
+                    else if (countdownNumber == 4)
+                    {
                         gameObject.SetActive(false);
                     }
                 }
             }
         }
-        
     }
 }

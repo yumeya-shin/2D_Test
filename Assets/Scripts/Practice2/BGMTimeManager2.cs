@@ -12,7 +12,7 @@ public class BGMTimeManager2 : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip gameBGM;
     public float gameBGMBPM = 120.0f;
-    [SerializeField] public GameObject practiceStartButton2;
+    [SerializeField] public GameObject practiceStartButton2, canvas1, canvas2, canvas3, countdownImage2_1, countdownImage2_2, number2;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,10 @@ public class BGMTimeManager2 : MonoBehaviour
         audioSource.clip = gameBGM;
         timeSum = TimeSpan.FromSeconds(60.0f / gameBGMBPM * 4.0f);
         practiceStartButton2 = GameObject.Find("PracticeStartButton2");
+        canvas1 = GameObject.Find("Canvas1"); canvas2 = GameObject.Find("Canvas2"); canvas3 = GameObject.Find("Canvas3");
+        countdownImage2_1 = GameObject.Find("CountdownImage2_1"); countdownImage2_2 = GameObject.Find("CountdownImage2_2"); number2 = GameObject.Find("Number2");
+        canvas2.SetActive(false);
+        canvas3.SetActive(false);
         if (isSceneChanged == true)
         {
             switch(switchBGM)
@@ -99,6 +103,10 @@ public class BGMTimeManager2 : MonoBehaviour
                             audioSource.time = (60.0f / gameBGMBPM * 220.0f + (float)timeDelta.TotalSeconds);
                             audioSource.PlayDelayed(0.0f);
                             practiceStartButton2.GetComponent<PracticeStartButton2>().BGMChange = false;
+                            countdownImage2_1.GetComponent<CountdownImage2_1>().isCountdown = true;
+                            countdownImage2_2.GetComponent<CountdownImage2_2>().isCountdown = true;
+                            canvas1.SetActive(false);
+                            canvas2.SetActive(true);
                             switchBGM = 5;
                         }
                         else if (practiceStartButton2.GetComponent<PracticeStartButton2>().BGMChange == false)
@@ -130,6 +138,10 @@ public class BGMTimeManager2 : MonoBehaviour
                             audioSource.time = (60.0f / gameBGMBPM * 220.0f + (float)timeDelta.TotalSeconds);
                             audioSource.PlayDelayed(0.0f);
                             practiceStartButton2.GetComponent<PracticeStartButton2>().BGMChange = false;
+                            countdownImage2_1.GetComponent<CountdownImage2_1>().isCountdown = true;
+                            countdownImage2_2.GetComponent<CountdownImage2_2>().isCountdown = true;
+                            canvas1.SetActive(false);
+                            canvas2.SetActive(true);
                             switchBGM = 5;
                         }
                         else if (practiceStartButton2.GetComponent<PracticeStartButton2>().BGMChange == false)
@@ -159,12 +171,19 @@ public class BGMTimeManager2 : MonoBehaviour
                         audioSource.time = (60.0f / gameBGMBPM * 220.0f + (float)timeDelta.TotalSeconds);
                         audioSource.PlayDelayed(0.0f);
                         practiceStartButton2.GetComponent<PracticeStartButton2>().BGMChange = false;
+                        countdownImage2_1.GetComponent<CountdownImage2_1>().isCountdown = true;
+                        countdownImage2_2.GetComponent<CountdownImage2_2>().isCountdown = true;
+                        canvas1.SetActive(false);
+                        canvas2.SetActive(true);
                         switchBGM = 5;
                         break;
                     case 5:
                         audioSource.Stop();
                         audioSource.time = (60.0f / gameBGMBPM * 88.0f + (float)timeDelta.TotalSeconds);
                         audioSource.PlayDelayed(0.0f);
+                        number2.GetComponent<Number2>().isTimePass = true;
+                        canvas2.SetActive(false);
+                        canvas3.SetActive(true);
                         switchBGM = 10;
                         break;
                     case 10:

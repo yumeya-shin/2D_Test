@@ -31,10 +31,10 @@ public class Number : MonoBehaviour
         //}
         if(isDeltaPassed == true)
         {
-            Debug.Log(rectTransform.anchoredPosition.x);
+            //Debug.Log(rectTransform.anchoredPosition.x);
             rectTransform.anchoredPosition = new Vector2(50.0f + (float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 360.0f);
-            Debug.Log(rectTransform.anchoredPosition.x);
-            Debug.Log(timeDelta.TotalSeconds);
+            //Debug.Log(rectTransform.anchoredPosition.x);
+            //Debug.Log(timeDelta.TotalSeconds);
             isDeltaPassed = false;
         }
     }
@@ -47,14 +47,18 @@ public class Number : MonoBehaviour
         //    rectTransform.localPosition = new Vector3(50.0f + (float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 0.0f, 0.0f);
         //    timeNow = DateTime.Now;
         //}
+        if(timeDelta == TimeSpan.FromSeconds(0.000))
+        {
+            timeDelta = TimeSpan.FromSeconds(0.001);
+        }
         if(timeDelta > TimeSpan.FromSeconds(0.000))
         {
             if (isDeltaPassed == true)
             {
-                Debug.Log(rectTransform.anchoredPosition.x);
+                //Debug.Log(rectTransform.anchoredPosition.x);
                 rectTransform.anchoredPosition = new Vector2(50.0f + (float)timeDelta.TotalSeconds * 1080.0f / 3.500f, 360.0f);
-                Debug.Log(rectTransform.anchoredPosition.x);
-                Debug.Log(timeDelta.TotalSeconds);
+                //Debug.Log(rectTransform.anchoredPosition.x);
+                //Debug.Log(timeDelta.TotalSeconds);
                 isDeltaPassed = false;
             }
             timeNow = DateTime.Now;
