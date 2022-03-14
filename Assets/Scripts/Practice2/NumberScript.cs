@@ -4,13 +4,13 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class Number2 : MonoBehaviour
+public class NumberScript : MonoBehaviour
 {
     public DateTime timeStart, timeNow;
     public TimeSpan timeDelta;
     public bool isTimePass = false;
     public RectTransform rectTransform;
-    [SerializeField] public GameObject canvas, BGMTimeManager2;
+    [SerializeField] public GameObject canvas, BGMTimeManager2, numberFXGenerator, result, resultStarFXGenerator;
     [SerializeField] public RectTransform canvasRectTransform;
     public float canvasWidth, canvasHeight;
     [SerializeField] public Image image;
@@ -28,6 +28,9 @@ public class Number2 : MonoBehaviour
         Debug.Log($"canvasWidth = {canvasWidth}");
         Debug.Log($"canvasHeight = {canvasHeight}");
         BGMTimeManager2 = GameObject.Find("BGMTimeManager2");
+        numberFXGenerator = GameObject.Find("NumberFXGenerator");
+        result = GameObject.Find("Result");
+        resultStarFXGenerator = GameObject.Find("ResultStarFXGenerator");
         if (isTimePass == true)
         {
             timeStart = BGMTimeManager2.GetComponent<BGMTimeManager2>().timeStart;
@@ -62,6 +65,18 @@ public class Number2 : MonoBehaviour
                 timeStart = timeNow;
                 //Debug.Log($"timeDelta = {timeDelta}");
                 rectTransform.anchoredPosition += new Vector2((float)timeDelta.TotalSeconds * (canvasWidth - 50.0f - 150.0f) / (60.0f / BGMTimeManager2.GetComponent<BGMTimeManager2>().gameBGMBPM * 7.0f), 0.0f);
+                if(Input.GetMouseButtonUp(0) == true)
+                {
+                    numberFXGenerator.GetComponent<NumberFXGenerator2>().isNumberFX = true;
+                    result.GetComponent<ResultScript>().isResult = true;
+                    resultStarFXGenerator.GetComponent<ResultStarFXGeneratorScript>().isResultStarFX = true;
+                    gameObject.SetActive(false);
+                }
+                if(rectTransform.anchoredPosition.x >= (canvasWidth + 50.0f))
+                {
+                    result.GetComponent<ResultScript>().isResult = true;
+                    gameObject.SetActive(false);
+                }
             }
         }
     }

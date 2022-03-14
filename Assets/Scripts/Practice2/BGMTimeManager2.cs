@@ -12,7 +12,7 @@ public class BGMTimeManager2 : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip gameBGM;
     public float gameBGMBPM = 120.0f;
-    [SerializeField] public GameObject practiceStartButton2, canvas1, canvas2, canvas3, countdownImage2_1, countdownImage2_2, number2;
+    [SerializeField] public GameObject practiceStartButton2, canvas1, canvas2, canvas3, countdownImage2_1, countdownImage2_2, number;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class BGMTimeManager2 : MonoBehaviour
         timeSum = TimeSpan.FromSeconds(60.0f / gameBGMBPM * 4.0f);
         practiceStartButton2 = GameObject.Find("PracticeStartButton2");
         canvas1 = GameObject.Find("Canvas1"); canvas2 = GameObject.Find("Canvas2"); canvas3 = GameObject.Find("Canvas3");
-        countdownImage2_1 = GameObject.Find("CountdownImage2_1"); countdownImage2_2 = GameObject.Find("CountdownImage2_2"); number2 = GameObject.Find("Number2");
+        countdownImage2_1 = GameObject.Find("CountdownImage2_1"); countdownImage2_2 = GameObject.Find("CountdownImage2_2"); number = GameObject.Find("Number");
         canvas2.SetActive(false);
         canvas3.SetActive(false);
         if (isSceneChanged == true)
@@ -181,7 +181,7 @@ public class BGMTimeManager2 : MonoBehaviour
                         audioSource.Stop();
                         audioSource.time = (60.0f / gameBGMBPM * 88.0f + (float)timeDelta.TotalSeconds);
                         audioSource.PlayDelayed(0.0f);
-                        number2.GetComponent<Number2>().isTimePass = true;
+                        number.GetComponent<NumberScript>().isTimePass = true;
                         canvas2.SetActive(false);
                         canvas3.SetActive(true);
                         switchBGM = 10;
